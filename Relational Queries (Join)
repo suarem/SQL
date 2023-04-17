@@ -1,0 +1,13 @@
+SELECT
+customers.state,
+orders.device,
+COUNT (orders.device)
+
+FROM customers
+
+LEFT JOIN orders
+on customers.account_id=orders.account_id
+
+GROUP BY
+customers.state,
+orders.device
